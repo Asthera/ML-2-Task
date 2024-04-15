@@ -6,26 +6,34 @@ import numpy as np
 
 # generate all possible list of lists of size 3x3 with numbers 0-8
 def generate_all_states():
-    permutations = itertools.permutations(range(9))
+    permutations = list(itertools.permutations(range(2)))
 
-    return np.array([np.array(p) for p in permutations])
+    return permutations
 
 
 start = time.time()
 
-array_to_find = np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]])
-print(array_to_find)
+d = {}
 
-all_states = generate_all_states()
-print(all_states)
+perm = generate_all_states()
 
-flatten_array_to_find = array_to_find.flatten()
-print(flatten_array_to_find, type(flatten_array_to_find))
-index = np.where(np.all(all_states == flatten_array_to_find, axis=1))
-print(index)
+for i in  perm:
+    for j in range(3):
+        d[i, j] = np.random.rand()
+
+print(d)
+
+# Find max value od dictionary based on fist key ex (0, 1)
+values = np.array([d[(0, 1), i] for i in range(3)])
+
+print(values, np.argmax(values), np.max(values))
+
+
+
+
 
 print(f"Time taken: {time.time() - start} seconds")
-print(len(all_states))
+
 
 # test manhattan distance
 

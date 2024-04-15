@@ -5,7 +5,7 @@ import time
 def all_possible_states():
     permutations = itertools.permutations(range(9))
 
-    return np.array([np.array(p) for p in permutations])
+    return list(permutations)
 
 
 class QLearning:
@@ -34,14 +34,20 @@ class QLearning:
         self.action_space = [0, 1, 2, 3]
         self.len_actions = len(self.action_space)
 
+
+        self.Q = {}
+
         # initialize Q(s, a)
         if self.use_random_values:
-            self.Q = np.random.rand(self.len_states, self.len_actions)
-            # terminal when position >= 0.45 (the goal position on top of the right hill)
-            idx_goal_state = self.state_to_idx(self.env.get_goal_state())
-            self.Q[idx_goal_state, :] = 0
+            for state in self.all_possible_states:
+                for action in self.action_space:
+                    self.Q[state, action] = np.random.rand()
+                    # TODO: add 0 to terminal states
+
         else:
-            self.Q = np.zeros((self.len_states, self.len_actions))
+            for state in self.all_possible_states:
+                for action in self.action_space:
+                    self.Q[state, action] = 0
 
         # steps, rewards to then plot it in the end
         self.steps = []
