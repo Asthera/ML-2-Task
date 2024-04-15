@@ -55,6 +55,8 @@ class EightPuzzleEnv:
 
         # self.render()
 
+
+
         # return the next_state, reward, done, truncated, info
         return self.state, reward, self.is_goal(self.state), False, {}
 

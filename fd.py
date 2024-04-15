@@ -6,9 +6,24 @@ import numpy as np
 
 # generate all possible list of lists of size 3x3 with numbers 0-8
 def generate_all_states():
-    permutations = itertools.permutations(range(9))
+    permutations = list(itertools.permutations(range(2)))
 
-    return np.array([np.array(p) for p in permutations])
+    return permutations
+
+
+permutation = generate_all_states()
+
+print(permutation, type(permutation))
+print(permutation[0], type(permutation[0]))
+
+
+Dict = {}
+
+for i in range(2):
+    Dict[permutation[i]] = i
+
+print(Dict)
+
 
 
 start = time.time()
