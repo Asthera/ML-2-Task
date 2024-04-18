@@ -6,7 +6,7 @@ import numpy as np
 
 # generate all possible list of lists of size 3x3 with numbers 0-8
 def generate_all_states():
-    permutations = list(itertools.permutations(range(2)))
+    permutations = list(itertools.permutations(range(9)))
 
     return permutations
 
@@ -28,19 +28,9 @@ print(Dict)
 
 start = time.time()
 
-array_to_find = np.array([[0, 1, 2], [3, 4, 5], [6, 7, 8]])
-print(array_to_find)
 
-all_states = generate_all_states()
-print(all_states)
-
-flatten_array_to_find = array_to_find.flatten()
-print(flatten_array_to_find, type(flatten_array_to_find))
-index = np.where(np.all(all_states == flatten_array_to_find, axis=1))
-print(index)
 
 print(f"Time taken: {time.time() - start} seconds")
-print(len(all_states))
 
 # test manhattan distance
 
@@ -62,3 +52,42 @@ def manhattan_distance(state, goal_state):
 
 distance = manhattan_distance(state, goal_state)
 print(distance[0], type(distance))
+
+
+# test how work set, because we need to store visited states, and it save only half of the states
+visited_states = set()
+for i in permutation:
+    visited_states.add(i)
+
+print(visited_states, len(visited_states))
+
+
+from eight_puzzle import EightPuzzleEnv
+
+env = EightPuzzleEnv()
+print(env.reward_type)
+
+def hamming_distance(state, goal_state):
+    distance = 0
+    size = len(state)
+    for i in range(size):
+        for j in range(size):
+            # Skip the blank space in the calculation
+            if state[i][j] != 0 and state[i][j] != goal_state[i][j]:
+                distance += 1
+    return distance
+
+# Example usage:
+current_state = [
+    [2, 8, 3],
+    [1, 6, 4],
+    [7, 0, 5]
+]
+
+goal_state = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 0]
+]
+
+print("Hamming distance:", hamming_distance(current_state, goal_state))
