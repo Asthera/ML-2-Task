@@ -1,7 +1,7 @@
 import numpy as np
 import itertools
-import time
 import matplotlib.pyplot as plt
+import pickle
 
 
 class QLearning:
@@ -34,7 +34,7 @@ class QLearning:
         self.steps = []
         self.rewards = []
 
-        self.visited_states = set()
+        # self.visited_states = set()
 
     def max_Q(self, state: tuple) -> float:
         """
@@ -69,7 +69,7 @@ class QLearning:
         steps = 0
         reward_episode = 0
 
-        start = time.time()
+        # start = time.time()
 
         while not done and not truncated:
             # choose action
@@ -91,12 +91,13 @@ class QLearning:
             # if steps % 100 == 0:
             #     print(f"Step {steps}")
 
-            self.visited_states.add(state)
+            # self.visited_states.add(state)
 
         self.rewards.append(reward_episode)
+        self.steps.append(steps)
 
-        print(f"\n Visited states: {len(self.visited_states)} \n")
-        print(f"\n\nTime taken: {time.time() - start} seconds\n\n")
+        # print(f"\n Visited states: {len(self.visited_states)} \n")
+        # print(f"\n\nTime taken for episode: {time.time() - start} seconds\n\n")
 
         return steps, reward_episode
 
@@ -110,14 +111,19 @@ class QLearning:
             steps, rewards = self.train_episode()
             self.decrease_epsilon()
 
-            print("------------------------------------")
-            print(f"Episode {e + 1}/{episodes}, steps: {steps}, rewards: {rewards}, epsilon: {self.epsilon}")
+            if e % 500 == 0:
+                print("---------------------")
+                print(f"Episode {e + 1}/{episodes}, steps: {steps}, rewards: {rewards}, epsilon: {self.epsilon}")
 
     def decrease_epsilon(self) -> None:
         """
         Decrease epsilon
         :return:
         """
+
+        if self.epsilon == 0.01:
+            return None
+
         self.epsilon -= self.decay_rate
 
         if self.epsilon < 0.01:
@@ -147,13 +153,18 @@ class QLearning:
             for state in all_possible_states:
                 for action in self.action_space:
                     self.Q[state, action] = np.random.rand()
-            # TODO: add 0 to terminal states
+
+            self.Q[(1, 2, 3, 4, 5, 6, 7, 8, 0), 0] = 0
+            self.Q[(1, 2, 3, 4, 5, 6, 7, 8, 0), 1] = 0
+            self.Q[(1, 2, 3, 4, 5, 6, 7, 8, 0), 2] = 0
+            self.Q[(1, 2, 3, 4, 5, 6, 7, 8, 0), 3] = 0
+
         if value == "zero":
             for state in all_possible_states:
                 for action in self.action_space:
                     self.Q[state, action] = 0
 
-    def possible_states(self) -> list[tuple, ]:
+    def possible_states(self) -> list[tuple,]:
         """
         Generate all possible states for 8-puzzle
 
@@ -168,10 +179,46 @@ class QLearning:
         """
         Plot the rewards
 
-        :param
-        plot_after: by default 0, plot the rewards from the beginning
+        :param plot_after: by default 0, plot the rewards from the beginning
         :return:
         """
 
         plt.plot(self.rewards[plot_after:], 'o')
         plt.show()
+
+    def save_Q_table(self, filename: str) -> None:
+        """
+        Save the Q table to a file
+
+        :param filename:
+        :return:
+        """
+
+        with open(filename, "wb") as f:
+            pickle.dump(self.Q, f, protocol=pickle.HIGHEST_PROTOCOL)
+
+    def load_Q_table(self, filename: str) -> None:
+        """
+        Load the Q table from a file
+
+        :param filename:
+        :return:
+        """
+
+        with open(filename, "rb") as f:
+            self.Q = pickle.load(f)
+
+    def get_rewards(self):
+        return self.rewards
+
+    def get_average_reward(self):
+        return np.mean(self.rewards)
+
+    def get_average_steps(self):
+        return np.mean(self.steps)
+
+    def get_max_reward(self):
+        return np.max(self.rewards)
+
+    def get_success_rate(self):
+        return np.sum(np.array(self.rewards) > -2_000) / len(self.rewards)

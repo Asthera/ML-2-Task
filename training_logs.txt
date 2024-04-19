@@ -1,0 +1,650 @@
+/Users/volodimir/anaconda3/envs/Global/bin/python /Users/volodimir/PycharmProjects/ML-2-Taks/main.py
+pygame 2.5.2 (SDL 2.28.3, Python 3.11.8)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Experiment 1
+Hyperparameters:
+Alpha: 0.1
+Gamma: 0.8
+Epsilon: 0.8
+Decay rate: 0.0008
+Episodes: 5000
+Use random values: False
+Reward type: small-penalty
+---------------------
+Episode 1/5000, steps: 10000, rewards: -315712, epsilon: 0.7992
+---------------------
+Episode 501/5000, steps: 10000, rewards: -124741, epsilon: 0.39919999999998856
+---------------------
+Episode 1001/5000, steps: 10000, rewards: -13564, epsilon: 0.01
+---------------------
+Episode 1501/5000, steps: 4073, rewards: -4467, epsilon: 0.01
+---------------------
+Episode 2001/5000, steps: 1417, rewards: -1712, epsilon: 0.01
+---------------------
+Episode 2501/5000, steps: 293, rewards: -291, epsilon: 0.01
+---------------------
+Episode 3001/5000, steps: 307, rewards: -206, epsilon: 0.01
+---------------------
+Episode 3501/5000, steps: 2107, rewards: -2996, epsilon: 0.01
+---------------------
+Episode 4001/5000, steps: 631, rewards: -629, epsilon: 0.01
+---------------------
+Episode 4501/5000, steps: 1994, rewards: -2784, epsilon: 0.01
+Average reward: -29909.45
+Max reward: 100.00
+Average steps: 4001.65
+Success rate: 0.40
+Experiment 1 took 378.26331782341003 seconds
+
+Experiment 2
+Hyperparameters:
+Alpha: 0.1
+Gamma: 0.9
+Epsilon: 0.6
+Decay rate: 0.0006
+Episodes: 5000
+Use random values: True
+Reward type: manhattan
+---------------------
+Episode 1/5000, steps: 10000, rewards: -267201.9600000001, epsilon: 0.5993999999999999
+---------------------
+Episode 501/5000, steps: 10000, rewards: -101376.97000000002, epsilon: 0.29939999999999606
+---------------------
+Episode 1001/5000, steps: 3331, rewards: -3823.8599999999965, epsilon: 0.01
+---------------------
+Episode 1501/5000, steps: 970, rewards: -1165.8400000000001, epsilon: 0.01
+---------------------
+Episode 2001/5000, steps: 5113, rewards: -6496.849999999998, epsilon: 0.01
+---------------------
+Episode 2501/5000, steps: 1781, rewards: -2075.859999999998, epsilon: 0.01
+---------------------
+Episode 3001/5000, steps: 1085, rewards: -1280.8700000000001, epsilon: 0.01
+---------------------
+Episode 3501/5000, steps: 8760, rewards: -11232.889999999996, epsilon: 0.01
+---------------------
+Episode 4001/5000, steps: 601, rewards: -796.8300000000002, epsilon: 0.01
+---------------------
+Episode 4501/5000, steps: 360, rewards: -357.8600000000002, epsilon: 0.01
+Average reward: -23393.17
+Max reward: 98.02
+Average steps: 3659.97
+Success rate: 0.46
+Experiment 2 took 1374.4461257457733 seconds
+
+Experiment 3
+Hyperparameters:
+Alpha: 0.1
+Gamma: 0.99
+Epsilon: 0.5
+Decay rate: 0.0005
+Episodes: 5000
+Use random values: False
+Reward type: hamming
+---------------------
+Episode 1/5000, steps: 10000, rewards: -287991.9, epsilon: 0.4995
+---------------------
+Episode 501/5000, steps: 5194, rewards: -42217.40000000001, epsilon: 0.24949999999999978
+---------------------
+Episode 1001/5000, steps: 1043, rewards: -1337.4, epsilon: 0.01
+---------------------
+Episode 1501/5000, steps: 5619, rewards: -7200.399999999997, epsilon: 0.01
+---------------------
+Episode 2001/5000, steps: 1535, rewards: -1730.4000000000005, epsilon: 0.01
+---------------------
+Episode 2501/5000, steps: 333, rewards: -231.39999999999986, epsilon: 0.01
+---------------------
+Episode 3001/5000, steps: 428, rewards: -326.39999999999986, epsilon: 0.01
+---------------------
+Episode 3501/5000, steps: 3555, rewards: -4641.399999999998, epsilon: 0.01
+---------------------
+Episode 4001/5000, steps: 581, rewards: -578.2999999999998, epsilon: 0.01
+---------------------
+Episode 4501/5000, steps: 1345, rewards: -1738.4000000000005, epsilon: 0.01
+Average reward: -20113.92
+Max reward: 94.30
+Average steps: 3168.08
+Success rate: 0.50
+Experiment 3 took 404.3348488807678 seconds
+
+Experiment 4
+Hyperparameters:
+Alpha: 0.2
+Gamma: 0.8
+Epsilon: 0.5
+Decay rate: 0.0003
+Episodes: 5000
+Use random values: True
+Reward type: small-penalty
+---------------------
+Episode 1/5000, steps: 10000, rewards: -268786, epsilon: 0.4997
+---------------------
+Episode 501/5000, steps: 10000, rewards: -112861, epsilon: 0.34969999999998874
+---------------------
+Episode 1001/5000, steps: 3754, rewards: -26522, epsilon: 0.19969999999998217
+---------------------
+Episode 1501/5000, steps: 3000, rewards: -6562, epsilon: 0.049699999999984514
+---------------------
+Episode 2001/5000, steps: 6598, rewards: -8477, epsilon: 0.01
+---------------------
+Episode 2501/5000, steps: 1660, rewards: -2252, epsilon: 0.01
+---------------------
+Episode 3001/5000, steps: 1284, rewards: -1678, epsilon: 0.01
+---------------------
+Episode 3501/5000, steps: 218, rewards: -216, epsilon: 0.01
+---------------------
+Episode 4001/5000, steps: 499, rewards: -695, epsilon: 0.01
+---------------------
+Episode 4501/5000, steps: 24, rewards: 77, epsilon: 0.01
+Average reward: -25853.45
+Max reward: 94.00
+Average steps: 2868.58
+Success rate: 0.55
+Experiment 4 took 265.06552815437317 seconds
+
+Experiment 5
+Hyperparameters:
+Alpha: 0.2
+Gamma: 0.9
+Epsilon: 0.65
+Decay rate: 0.0005
+Episodes: 5000
+Use random values: False
+Reward type: manhattan
+---------------------
+Episode 1/5000, steps: 10000, rewards: -303138.99000000005, epsilon: 0.6495000000000001
+---------------------
+Episode 501/5000, steps: 10000, rewards: -129987.90000000004, epsilon: 0.39950000000001645
+---------------------
+Episode 1001/5000, steps: 7719, rewards: -41079.85999999999, epsilon: 0.14950000000001623
+---------------------
+Episode 1501/5000, steps: 3978, rewards: -5163.879999999997, epsilon: 0.01
+---------------------
+Episode 2001/5000, steps: 3079, rewards: -3373.879999999997, epsilon: 0.01
+---------------------
+Episode 2501/5000, steps: 2486, rewards: -2978.8299999999967, epsilon: 0.01
+---------------------
+Episode 3001/5000, steps: 725, rewards: -920.8900000000001, epsilon: 0.01
+---------------------
+Episode 3501/5000, steps: 948, rewards: -1242.8300000000002, epsilon: 0.01
+---------------------
+Episode 4001/5000, steps: 1741, rewards: -2431.8799999999965, epsilon: 0.01
+---------------------
+Episode 4501/5000, steps: 1559, rewards: -1952.869999999999, epsilon: 0.01
+Average reward: -26705.95
+Max reward: 95.05
+Average steps: 2576.80
+Success rate: 0.61
+Experiment 5 took 1388.1932847499847 seconds
+
+Experiment 6
+Hyperparameters:
+Alpha: 0.2
+Gamma: 0.99
+Epsilon: 0.4
+Decay rate: 0.0001
+Episodes: 5000
+Use random values: True
+Reward type: hamming
+---------------------
+Episode 1/5000, steps: 10000, rewards: -262350.9, epsilon: 0.39990000000000003
+---------------------
+Episode 501/5000, steps: 2504, rewards: -30122.500000000007, epsilon: 0.34990000000000554
+---------------------
+Episode 1001/5000, steps: 937, rewards: -9349.499999999998, epsilon: 0.29990000000001105
+---------------------
+Episode 1501/5000, steps: 6210, rewards: -51351.40000000001, epsilon: 0.24990000000001655
+---------------------
+Episode 2001/5000, steps: 69, rewards: -264.29999999999984, epsilon: 0.19990000000002206
+---------------------
+Episode 2501/5000, steps: 28, rewards: -25.30000000000004, epsilon: 0.14990000000002757
+---------------------
+Episode 3001/5000, steps: 621, rewards: -2004.3000000000006, epsilon: 0.09990000000002959
+---------------------
+Episode 3501/5000, steps: 859, rewards: -1846.6000000000004, epsilon: 0.04990000000002816
+---------------------
+Episode 4001/5000, steps: 236, rewards: -233.39999999999986, epsilon: 0.01
+---------------------
+Episode 4501/5000, steps: 14, rewards: 87.5, epsilon: 0.01
+Average reward: -25790.23
+Max reward: 96.40
+Average steps: 2352.75
+Success rate: 0.43
+Experiment 6 took 481.8821771144867 seconds
+
+Experiment 7
+Hyperparameters:
+Alpha: 0.3
+Gamma: 0.8
+Epsilon: 0.5
+Decay rate: 0.0001
+Episodes: 5000
+Use random values: False
+Reward type: small-penalty
+---------------------
+Episode 1/5000, steps: 10000, rewards: -287398, epsilon: 0.4999
+---------------------
+Episode 501/5000, steps: 10000, rewards: -148303, epsilon: 0.4499000000000055
+---------------------
+Episode 1001/5000, steps: 986, rewards: -12567, epsilon: 0.399900000000011
+---------------------
+Episode 1501/5000, steps: 6702, rewards: -77089, epsilon: 0.34990000000001653
+---------------------
+Episode 2001/5000, steps: 568, rewards: -4823, epsilon: 0.29990000000002204
+---------------------
+Episode 2501/5000, steps: 288, rewards: -2464, epsilon: 0.24990000000002754
+---------------------
+Episode 3001/5000, steps: 963, rewards: -6703, epsilon: 0.19990000000003305
+---------------------
+Episode 3501/5000, steps: 1882, rewards: -10295, epsilon: 0.14990000000003856
+---------------------
+Episode 4001/5000, steps: 107, rewards: -402, epsilon: 0.09990000000004058
+---------------------
+Episode 4501/5000, steps: 233, rewards: -330, epsilon: 0.04990000000003915
+Average reward: -34299.29
+Max reward: 99.00
+Average steps: 2432.26
+Success rate: 0.33
+Experiment 7 took 366.8097491264343 seconds
+
+Experiment 8
+Hyperparameters:
+Alpha: 0.3
+Gamma: 0.9
+Epsilon: 0.45
+Decay rate: 0.0001
+Episodes: 5000
+Use random values: True
+Reward type: manhattan
+---------------------
+Episode 1/5000, steps: 10000, rewards: -273043.02999999997, epsilon: 0.4499
+---------------------
+Episode 501/5000, steps: 10000, rewards: -132562.1200000001, epsilon: 0.39990000000000553
+---------------------
+Episode 1001/5000, steps: 543, rewards: -6381.8399999999965, epsilon: 0.34990000000001104
+---------------------
+Episode 1501/5000, steps: 4165, rewards: -41287.85999999997, epsilon: 0.29990000000001654
+---------------------
+Episode 2001/5000, steps: 490, rewards: -4942.829999999998, epsilon: 0.24990000000002205
+---------------------
+Episode 2501/5000, steps: 209, rewards: -1295.8200000000002, epsilon: 0.19990000000002756
+---------------------
+Episode 3001/5000, steps: 1688, rewards: -9902.869999999997, epsilon: 0.14990000000003306
+---------------------
+Episode 3501/5000, steps: 513, rewards: -1599.8600000000001, epsilon: 0.09990000000003509
+---------------------
+Episode 4001/5000, steps: 74, rewards: -71.86000000000018, epsilon: 0.049900000000033654
+---------------------
+Episode 4501/5000, steps: 58, rewards: 43.069999999999986, epsilon: 0.01
+Average reward: -27708.66
+Max reward: 99.01
+Average steps: 2163.85
+Success rate: 0.41
+Experiment 8 took 1234.3481550216675 seconds
+
+Experiment 9
+Hyperparameters:
+Alpha: 0.3
+Gamma: 0.99
+Epsilon: 0.4
+Decay rate: 0.0001
+Episodes: 5000
+Use random values: False
+Reward type: hamming
+---------------------
+Episode 1/5000, steps: 10000, rewards: -279676.0, epsilon: 0.39990000000000003
+---------------------
+Episode 501/5000, steps: 10000, rewards: -115236.80000000002, epsilon: 0.34990000000000554
+---------------------
+Episode 1001/5000, steps: 7274, rewards: -71918.39999999997, epsilon: 0.29990000000001105
+---------------------
+Episode 1501/5000, steps: 2025, rewards: -16674.500000000004, epsilon: 0.24990000000001655
+---------------------
+Episode 2001/5000, steps: 160, rewards: -1246.4000000000005, epsilon: 0.19990000000002206
+---------------------
+Episode 2501/5000, steps: 1496, rewards: -9116.299999999997, epsilon: 0.14990000000002757
+---------------------
+Episode 3001/5000, steps: 585, rewards: -1473.4000000000005, epsilon: 0.09990000000002959
+---------------------
+Episode 3501/5000, steps: 218, rewards: -413.29999999999984, epsilon: 0.04990000000002816
+---------------------
+Episode 4001/5000, steps: 345, rewards: -342.5999999999999, epsilon: 0.01
+---------------------
+Episode 4501/5000, steps: 267, rewards: -264.29999999999984, epsilon: 0.01
+Average reward: -23232.71
+Max reward: 96.30
+Average steps: 1989.20
+Success rate: 0.48
+Experiment 9 took 420.01370429992676 seconds
+
+Experiment 10
+Hyperparameters:
+Alpha: 0.4
+Gamma: 0.8
+Epsilon: 0.5
+Decay rate: 0.0001
+Episodes: 10000
+Use random values: True
+Reward type: small-penalty
+---------------------
+Episode 1/10000, steps: 10000, rewards: -277696, epsilon: 0.4999
+---------------------
+Episode 501/10000, steps: 10000, rewards: -149194, epsilon: 0.4499000000000055
+---------------------
+Episode 1001/10000, steps: 3558, rewards: -46423, epsilon: 0.399900000000011
+---------------------
+Episode 1501/10000, steps: 1812, rewards: -19333, epsilon: 0.34990000000001653
+---------------------
+Episode 2001/10000, steps: 1835, rewards: -18564, epsilon: 0.29990000000002204
+---------------------
+Episode 2501/10000, steps: 120, rewards: -1009, epsilon: 0.24990000000002754
+---------------------
+Episode 3001/10000, steps: 446, rewards: -2127, epsilon: 0.19990000000003305
+---------------------
+Episode 3501/10000, steps: 34, rewards: -32, epsilon: 0.14990000000003856
+---------------------
+Episode 4001/10000, steps: 401, rewards: -1290, epsilon: 0.09990000000004058
+---------------------
+Episode 4501/10000, steps: 1251, rewards: -2635, epsilon: 0.04990000000003915
+---------------------
+Episode 5001/10000, steps: 224, rewards: -321, epsilon: 0.01
+---------------------
+Episode 5501/10000, steps: 88, rewards: 13, epsilon: 0.01
+---------------------
+Episode 6001/10000, steps: 831, rewards: -1225, epsilon: 0.01
+---------------------
+Episode 6501/10000, steps: 1184, rewards: -1380, epsilon: 0.01
+---------------------
+Episode 7001/10000, steps: 180, rewards: -79, epsilon: 0.01
+---------------------
+Episode 7501/10000, steps: 106, rewards: -5, epsilon: 0.01
+---------------------
+Episode 8001/10000, steps: 356, rewards: -453, epsilon: 0.01
+---------------------
+Episode 8501/10000, steps: 16, rewards: 85, epsilon: 0.01
+---------------------
+Episode 9001/10000, steps: 64, rewards: -62, epsilon: 0.01
+---------------------
+Episode 9501/10000, steps: 237, rewards: -235, epsilon: 0.01
+Average reward: -16052.33
+Max reward: 97.00
+Average steps: 1222.48
+Success rate: 0.68
+Experiment 10 took 437.5700569152832 seconds
+
+Experiment 11
+Hyperparameters:
+Alpha: 0.4
+Gamma: 0.9
+Epsilon: 0.55
+Decay rate: 0.0001
+Episodes: 10000
+Use random values: False
+Reward type: manhattan
+---------------------
+Episode 1/10000, steps: 10000, rewards: -295614.97000000003, epsilon: 0.5499
+---------------------
+Episode 501/10000, steps: 1400, rewards: -22187.84000000002, epsilon: 0.49990000000000556
+---------------------
+Episode 1001/10000, steps: 2221, rewards: -31126.87000000002, epsilon: 0.44990000000001107
+---------------------
+Episode 1501/10000, steps: 584, rewards: -6521.859999999997, epsilon: 0.3999000000000166
+---------------------
+Episode 2001/10000, steps: 209, rewards: -1790.91, epsilon: 0.3499000000000221
+---------------------
+Episode 2501/10000, steps: 710, rewards: -6944.829999999998, epsilon: 0.2999000000000276
+---------------------
+Episode 3001/10000, steps: 951, rewards: -8076.869999999996, epsilon: 0.2499000000000331
+---------------------
+Episode 3501/10000, steps: 605, rewards: -4958.909999999996, epsilon: 0.1999000000000386
+---------------------
+Episode 4001/10000, steps: 446, rewards: -2324.8899999999967, epsilon: 0.1499000000000441
+---------------------
+Episode 4501/10000, steps: 26, rewards: 75.09, epsilon: 0.09990000000004613
+---------------------
+Episode 5001/10000, steps: 118, rewards: -16.90999999999994, epsilon: 0.0499000000000447
+---------------------
+Episode 5501/10000, steps: 1167, rewards: -1560.8500000000001, epsilon: 0.01
+---------------------
+Episode 6001/10000, steps: 15, rewards: 86.1, epsilon: 0.01
+---------------------
+Episode 6501/10000, steps: 18, rewards: 83.11, epsilon: 0.01
+---------------------
+Episode 7001/10000, steps: 117, rewards: -15.879999999999981, epsilon: 0.01
+---------------------
+Episode 7501/10000, steps: 151, rewards: -148.85000000000016, epsilon: 0.01
+---------------------
+Episode 8001/10000, steps: 77, rewards: 24.14000000000003, epsilon: 0.01
+---------------------
+Episode 8501/10000, steps: 268, rewards: -265.84000000000015, epsilon: 0.01
+---------------------
+Episode 9001/10000, steps: 69, rewards: 32.14, epsilon: 0.01
+---------------------
+Episode 9501/10000, steps: 110, rewards: -107.88, epsilon: 0.01
+Average reward: -16059.25
+Max reward: 98.02
+Average steps: 1087.98
+Success rate: 0.67
+Experiment 11 took 760.9393186569214 seconds
+
+Experiment 12
+Hyperparameters:
+Alpha: 0.4
+Gamma: 0.99
+Epsilon: 0.8
+Decay rate: 0.0009
+Episodes: 10000
+Use random values: True
+Reward type: hamming
+---------------------
+Episode 1/10000, steps: 10000, rewards: -321454.0, epsilon: 0.7991
+---------------------
+Episode 501/10000, steps: 10000, rewards: -117118.19999999998, epsilon: 0.3490999999999941
+---------------------
+Episode 1001/10000, steps: 323, rewards: -221.4999999999999, epsilon: 0.01
+---------------------
+Episode 1501/10000, steps: 1354, rewards: -1351.7000000000007, epsilon: 0.01
+---------------------
+Episode 2001/10000, steps: 1341, rewards: -1833.3000000000004, epsilon: 0.01
+---------------------
+Episode 2501/10000, steps: 58, rewards: 43.500000000000014, epsilon: 0.01
+---------------------
+Episode 3001/10000, steps: 74, rewards: 27.699999999999974, epsilon: 0.01
+---------------------
+Episode 3501/10000, steps: 1187, rewards: -1481.5000000000005, epsilon: 0.01
+---------------------
+Episode 4001/10000, steps: 614, rewards: -611.3999999999999, epsilon: 0.01
+---------------------
+Episode 4501/10000, steps: 750, rewards: -747.2999999999998, epsilon: 0.01
+---------------------
+Episode 5001/10000, steps: 301, rewards: -199.29999999999984, epsilon: 0.01
+---------------------
+Episode 5501/10000, steps: 417, rewards: -315.2999999999999, epsilon: 0.01
+---------------------
+Episode 6001/10000, steps: 14, rewards: 87.6, epsilon: 0.01
+---------------------
+Episode 6501/10000, steps: 26, rewards: 75.50000000000001, epsilon: 0.01
+---------------------
+Episode 7001/10000, steps: 34, rewards: 67.6, epsilon: 0.01
+---------------------
+Episode 7501/10000, steps: 141, rewards: -39.400000000000034, epsilon: 0.01
+---------------------
+Episode 8001/10000, steps: 27, rewards: 74.5, epsilon: 0.01
+---------------------
+Episode 8501/10000, steps: 19, rewards: 82.5, epsilon: 0.01
+---------------------
+Episode 9001/10000, steps: 96, rewards: 5.599999999999966, epsilon: 0.01
+---------------------
+Episode 9501/10000, steps: 36, rewards: 65.5, epsilon: 0.01
+Average reward: -11113.06
+Max reward: 97.30
+Average steps: 998.58
+Success rate: 0.87
+Experiment 12 took 249.59087586402893 seconds
+
+Experiment 13
+Hyperparameters:
+Alpha: 0.5
+Gamma: 0.8
+Epsilon: 0.6
+Decay rate: 0.0005
+Episodes: 10000
+Use random values: False
+Reward type: small-penalty
+---------------------
+Episode 1/10000, steps: 5178, rewards: -160111, epsilon: 0.5995
+---------------------
+Episode 501/10000, steps: 10000, rewards: -107416, epsilon: 0.34950000000001086
+---------------------
+Episode 1001/10000, steps: 3824, rewards: -14118, epsilon: 0.09950000000001064
+---------------------
+Episode 1501/10000, steps: 43, rewards: 58, epsilon: 0.01
+---------------------
+Episode 2001/10000, steps: 545, rewards: -543, epsilon: 0.01
+---------------------
+Episode 2501/10000, steps: 54, rewards: 47, epsilon: 0.01
+---------------------
+Episode 3001/10000, steps: 348, rewards: -346, epsilon: 0.01
+---------------------
+Episode 3501/10000, steps: 269, rewards: -168, epsilon: 0.01
+---------------------
+Episode 4001/10000, steps: 196, rewards: -392, epsilon: 0.01
+---------------------
+Episode 4501/10000, steps: 408, rewards: -505, epsilon: 0.01
+---------------------
+Episode 5001/10000, steps: 255, rewards: -352, epsilon: 0.01
+---------------------
+Episode 5501/10000, steps: 245, rewards: -144, epsilon: 0.01
+---------------------
+Episode 6001/10000, steps: 16, rewards: 85, epsilon: 0.01
+---------------------
+Episode 6501/10000, steps: 569, rewards: -666, epsilon: 0.01
+---------------------
+Episode 7001/10000, steps: 68, rewards: 33, epsilon: 0.01
+---------------------
+Episode 7501/10000, steps: 666, rewards: -961, epsilon: 0.01
+---------------------
+Episode 8001/10000, steps: 528, rewards: -823, epsilon: 0.01
+---------------------
+Episode 8501/10000, steps: 140, rewards: -138, epsilon: 0.01
+---------------------
+Episode 9001/10000, steps: 284, rewards: -183, epsilon: 0.01
+---------------------
+Episode 9501/10000, steps: 233, rewards: -132, epsilon: 0.01
+Average reward: -10808.15
+Max reward: 97.00
+Average steps: 1031.22
+Success rate: 0.86
+Experiment 13 took 192.7591872215271 seconds
+
+Experiment 14
+Hyperparameters:
+Alpha: 0.5
+Gamma: 0.9
+Epsilon: 0.45
+Decay rate: 0.0005
+Episodes: 10000
+Use random values: True
+Reward type: manhattan
+---------------------
+Episode 1/10000, steps: 10000, rewards: -276408.97000000003, epsilon: 0.4495
+---------------------
+Episode 501/10000, steps: 10000, rewards: -69696.98999999999, epsilon: 0.1994999999999998
+---------------------
+Episode 1001/10000, steps: 550, rewards: -547.9000000000001, epsilon: 0.01
+---------------------
+Episode 1501/10000, steps: 1973, rewards: -2663.8199999999974, epsilon: 0.01
+---------------------
+Episode 2001/10000, steps: 1034, rewards: -1229.8200000000002, epsilon: 0.01
+---------------------
+Episode 2501/10000, steps: 1885, rewards: -2278.8499999999976, epsilon: 0.01
+---------------------
+Episode 3001/10000, steps: 469, rewards: -367.84000000000015, epsilon: 0.01
+---------------------
+Episode 3501/10000, steps: 165, rewards: -162.87000000000012, epsilon: 0.01
+---------------------
+Episode 4001/10000, steps: 98, rewards: 3.110000000000042, epsilon: 0.01
+---------------------
+Episode 4501/10000, steps: 239, rewards: -137.80000000000015, epsilon: 0.01
+---------------------
+Episode 5001/10000, steps: 552, rewards: -648.8500000000001, epsilon: 0.01
+---------------------
+Episode 5501/10000, steps: 108, rewards: -6.849999999999966, epsilon: 0.01
+---------------------
+Episode 6001/10000, steps: 258, rewards: -156.85000000000014, epsilon: 0.01
+---------------------
+Episode 6501/10000, steps: 46, rewards: 55.10999999999997, epsilon: 0.01
+---------------------
+Episode 7001/10000, steps: 256, rewards: -154.85000000000016, epsilon: 0.01
+---------------------
+Episode 7501/10000, steps: 96, rewards: 5.150000000000077, epsilon: 0.01
+---------------------
+Episode 8001/10000, steps: 49, rewards: 52.139999999999986, epsilon: 0.01
+---------------------
+Episode 8501/10000, steps: 26, rewards: 75.17000000000002, epsilon: 0.01
+---------------------
+Episode 9001/10000, steps: 84, rewards: 17.150000000000063, epsilon: 0.01
+---------------------
+Episode 9501/10000, steps: 122, rewards: -20.869999999999933, epsilon: 0.01
+Average reward: -7536.99
+Max reward: 98.02
+Average steps: 946.37
+Success rate: 0.88
+Experiment 14 took 689.3604726791382 seconds
+
+Experiment 15
+Hyperparameters:
+Alpha: 0.5
+Gamma: 0.99
+Epsilon: 0.4
+Decay rate: 0.0005
+Episodes: 10000
+Use random values: False
+Reward type: hamming
+---------------------
+Episode 1/10000, steps: 10000, rewards: -280963.3, epsilon: 0.3995
+---------------------
+Episode 501/10000, steps: 10000, rewards: -52866.9, epsilon: 0.1494999999999998
+---------------------
+Episode 1001/10000, steps: 1728, rewards: -2121.6000000000004, epsilon: 0.01
+---------------------
+Episode 1501/10000, steps: 55, rewards: 46.60000000000001, epsilon: 0.01
+---------------------
+Episode 2001/10000, steps: 1165, rewards: -1459.4000000000005, epsilon: 0.01
+---------------------
+Episode 2501/10000, steps: 2125, rewards: -2617.5000000000005, epsilon: 0.01
+---------------------
+Episode 3001/10000, steps: 743, rewards: -1235.5000000000005, epsilon: 0.01
+---------------------
+Episode 3501/10000, steps: 679, rewards: -775.3999999999999, epsilon: 0.01
+---------------------
+Episode 4001/10000, steps: 84, rewards: 17.599999999999966, epsilon: 0.01
+---------------------
+Episode 4501/10000, steps: 390, rewards: -288.39999999999986, epsilon: 0.01
+---------------------
+Episode 5001/10000, steps: 102, rewards: -99.40000000000003, epsilon: 0.01
+---------------------
+Episode 5501/10000, steps: 31, rewards: -28.400000000000034, epsilon: 0.01
+---------------------
+Episode 6001/10000, steps: 306, rewards: -204.29999999999984, epsilon: 0.01
+---------------------
+Episode 6501/10000, steps: 155, rewards: -152.60000000000002, epsilon: 0.01
+---------------------
+Episode 7001/10000, steps: 22, rewards: 79.60000000000001, epsilon: 0.01
+---------------------
+Episode 7501/10000, steps: 267, rewards: -165.39999999999986, epsilon: 0.01
+---------------------
+Episode 8001/10000, steps: 42, rewards: 59.60000000000001, epsilon: 0.01
+---------------------
+Episode 8501/10000, steps: 320, rewards: -317.29999999999984, epsilon: 0.01
+---------------------
+Episode 9001/10000, steps: 60, rewards: 41.60000000000001, epsilon: 0.01
+---------------------
+Episode 9501/10000, steps: 148, rewards: -46.30000000000004, epsilon: 0.01
+Average reward: -6480.08
+Max reward: 100.00
+Average steps: 879.71
+Success rate: 0.89
+Experiment 15 took 224.32660508155823 seconds
+
+
+Process finished with exit code 0

@@ -1,7 +1,5 @@
 import numpy as np
 import pygame
-import sys
-import itertools
 
 
 class EightPuzzleEnv:
@@ -28,6 +26,23 @@ class EightPuzzleEnv:
 
         self.reward_type = reward_type
 
+        self.to_render = render
+
+        if self.to_render:
+            pygame.init()
+            self.screen = pygame.display.set_mode((300, 300))
+            pygame.display.set_caption("8 Puzzle")
+            self.font = pygame.font.Font(None, 40)
+            self.clock = pygame.time.Clock()
+            self.fresh_rate = 60
+
+    def set_fresh_rate(self, fresh_rate: int) -> None:
+        """
+        Set the fresh rate for the pygame screen
+        :param fresh_rate:
+        :return:
+        """
+        self.fresh_rate = fresh_rate
 
     def reset(self) -> (tuple, dict):
         """
@@ -50,10 +65,16 @@ class EightPuzzleEnv:
 
         self.current_step = 0
 
+        # reset pygame screen
+        if self.to_render:
+            self.screen.fill((0, 0, 0))
+            self.draw_puzzle(self.state)
+            pygame.display.flip()
+
         return tuple(self.state.flatten()), {}
 
     def get_goal_state(self) -> np.ndarray:
-        """"
+        """
         Return the goal state
 
         :return: the goal state
@@ -87,7 +108,7 @@ class EightPuzzleEnv:
 
         self.current_step += 1
 
-        # self.render()
+        self.render()
 
         return new_state, self.get_reward(self.state), self.is_goal(self.state), self.is_truncated(), {}
 
@@ -112,7 +133,6 @@ class EightPuzzleEnv:
                     self.state[self.empty_tile_pos[0] + 1, self.empty_tile_pos[1]], self.state[self.empty_tile_pos]
                 self.empty_tile_pos = (self.empty_tile_pos[0] + 1, self.empty_tile_pos[1])
 
-
         elif direction == 2:
             if self.empty_tile_pos[1] > 0:
                 self.state[self.empty_tile_pos], self.state[self.empty_tile_pos[0], self.empty_tile_pos[1] - 1] = \
@@ -126,8 +146,25 @@ class EightPuzzleEnv:
                 self.empty_tile_pos = (self.empty_tile_pos[0], self.empty_tile_pos[1] + 1)
 
     def render(self) -> None:
-        # TODO: implement this function with pygame
-        print(self.state)
+        if self.to_render:
+            self.screen.fill((0, 0, 0))
+            self.draw_puzzle(self.state)
+
+            pygame.display.flip()
+            self.clock.tick(self.fresh_rate)
+
+    def draw_puzzle(self, state: np.ndarray) -> None:
+        for y in range(3):
+            for x in range(3):
+                tile = state[y][x]
+                if tile != 0:
+                    # Draw tile
+                    rect = pygame.Rect(x * 100, y * 100, 100, 100)
+                    pygame.draw.rect(self.screen, (255, 255, 255), rect, 3)
+                    # Draw tile number
+                    text_surf = self.font.render(str(tile), True, (255, 255, 255))
+                    text_rect = text_surf.get_rect(center=rect.center)
+                    self.screen.blit(text_surf, text_rect)
 
     def generate_state(self) -> np.ndarray:
         """
@@ -144,7 +181,7 @@ class EightPuzzleEnv:
         return state
 
     def is_solvable(self, state: np.ndarray) -> bool:
-        """"
+        """
         Check if the state is solvable
 
         :param state: the state to check
@@ -169,7 +206,7 @@ class EightPuzzleEnv:
         return inversion_count % 2 == 0
 
     def is_goal(self, state: np.ndarray) -> bool:
-        """"
+        """
         Check if the state is the goal state
 
         :param state: the state to check
@@ -236,7 +273,7 @@ class EightPuzzleEnv:
             raise ValueError("Invalid reward type")
 
     def manhattan_distance(self, state: np.ndarray) -> int:
-        """"
+        """
         It one of types of reward functions
 
         Calculate the Manhattan distance between the current state and the goal state
