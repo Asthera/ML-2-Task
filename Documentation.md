@@ -109,28 +109,58 @@ Example of implementation:
                     inversion_count += 1
 
         return inversion_count % 2 == 0
-є
 ```
 [Reference](https://math.stackexchange.com/questions/293527/how-to-check-if-a-8-puzzle-is-solvable)
 
 ## Environment Implementation Details
 
-# TODO rewrite
-
 - The environment is implemented in eight_puzzle.py as `EightPuzzleEnv` class.
+
+- Class have params for:
+  - `limit_count_steps` - `maximum number of steps` to solve the puzzle if current count of steps is bigger than this value, then the episode is end (in method `step` will return `truncated == False`).
+  By default, it is set to `10_000`.
+  - `reward_type` - type of reward function. By default, it is set to `simple-penalty`. Possible values are `simple-penalty`, `manhattan`, `hamming`.
+  - 'render' - if True, then render the current state of the environment. By default, it is set to `False`.
+  Now just print the current state of the environment.
+
+
+- Have methods needed for training:
+  - `reset` - reset the environment to the starting position.
+  - `step` - take an action and return the next state, reward, done, truncated, and info.
+  - `render` - render the current state of the environment (print the current state of the environment)
+
 
 - Reward function is implemented as `get_reward` method.
   - Have 3 types of it:
+  - For each type, reward for invalid move or solved puzzle are -100 and 100 respectively.
     - "simple-penalty" 
       - for each move, the reward is `-1`
-      - when the puzzle is solved, the reward is `0`
-      - for not valid moves, the reward is `-100`
     - "manhattan"
-      - for each move, the reward computed as `manhattan distance between the current state and the goal state`
-      - when the puzzle is solved, the reward is `0`
-      - for not valid moves, the reward is `-100`
+      - for each move, computed  manhattan distance(between state and goal_state) for previous/current state and given difference between them.
+      ```python
+      prev_dist = manhattan_distance(prev_state, goal_state)
+      curr_dist = manhattan_distance(curr_state, goal_state)
+      
+      diff = prev_dist - curr_dist / 100.0
+      
+      if curr_dist < prev_dist:
+            reward = -1 + diff
+        else:
+            reward = -1 - diff
+      ```
     - "hamming"
-
+    - for each move, computed hamming distance(between state and goal_state) for previous/current state and given difference between them.
+      ```python
+      prev_dist = hamming_distance(prev_state, goal_state)
+      curr_dist = hamming_distance(curr_state, goal_state)
+      
+      diff = prev_dist - curr_dist / 10.0
+      
+      if curr_dist < prev_dist:
+            reward = -1 + diff
+        else:
+            reward = -1 - diff
+      ```
 ## Q-Learning
 
 - The Q-Learning algorithm is implemented in q_learning.py as `QLearning` class.
@@ -150,4 +180,10 @@ Example of implementation:
 ### Optimizations for Q-Learning
 
 Firstly, for Q table we used numpy array with all possible states as tuple and one more 2d array with states as integers (so firstly find index in 1d array and then in 2d array) and actions.
-It was not efficient, because we had to find index in 1d array with len == 362880. So had O(n) +  complexity.
+It was not efficient, because we had to find index in 1d array with len == 362880 and the by this find value in Q-table. So had O(n) + O(1) complexity.
+
+We changed it to dictionary with two keys - state and action. So we can find value in O(1) time.
+
+
+## Experiments
+

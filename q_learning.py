@@ -37,7 +37,7 @@ class QLearning:
         self.visited_states = set()
 
     def max_Q(self, state: tuple) -> float:
-        """"
+        """
         Calculate the maximum Q value for a given state
 
         :param state: the state
@@ -93,15 +93,10 @@ class QLearning:
 
             self.visited_states.add(state)
 
-
-
         self.rewards.append(reward_episode)
 
-
         print(f"\n Visited states: {len(self.visited_states)} \n")
-
         print(f"\n\nTime taken: {time.time() - start} seconds\n\n")
-
 
         return steps, reward_episode
 
@@ -127,8 +122,6 @@ class QLearning:
 
         if self.epsilon < 0.01:
             self.epsilon = 0.01
-
-
 
     def choose_action(self, state: tuple) -> int:
         """
@@ -165,6 +158,7 @@ class QLearning:
         Generate all possible states for 8-puzzle
 
         :return:
+        list of tuples with all possible states
         """
         permutations = itertools.permutations(range(9))
 
@@ -179,5 +173,5 @@ class QLearning:
         :return:
         """
 
-        plt.plot(self.rewards[plot_after:])
+        plt.plot(self.rewards[plot_after:], 'o')
         plt.show()

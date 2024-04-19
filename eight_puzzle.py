@@ -9,7 +9,8 @@ class EightPuzzleEnv:
     def __init__(self,
                  limit_count_steps: int | None = 10_000,
                  render: bool = False,
-                 reward_type: str = "small-penalty" or "manhattan" or "hamming"):
+                 reward_type: str = "small-penalty" or "manhattan" or "hamming"
+                 ):
         self.goal_state = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 0]])
 
         self.action_space = [0, 1, 2, 3]
@@ -201,14 +202,34 @@ class EightPuzzleEnv:
         :param state:
         :return:
         """
+        if np.array_equal(state, self.goal_state):
+            return 100
 
         if np.array_equal(self.prev_state, state):
             return -100
 
         if self.reward_type == "manhattan":
-            return -self.manhattan_distance(state)
+            prev_distance = self.manhattan_distance(self.prev_state)
+            current_distance = self.manhattan_distance(state)
+
+            diff = abs(current_distance - prev_distance) / 100.0
+
+            if current_distance < prev_distance:
+                return -1 + diff
+
+            return -1 - diff
+
         elif self.reward_type == "hamming":
-            return self.hamming_distance(state)
+            prev_distance = self.hamming_distance(self.prev_state)
+            current_distance = self.hamming_distance(state)
+
+            diff = abs(current_distance - prev_distance) / 10.0
+
+            if current_distance < prev_distance:
+                return -1 + diff
+
+            return -1 - diff
+
         elif self.reward_type == "small-penalty":
             return -1
         else:
